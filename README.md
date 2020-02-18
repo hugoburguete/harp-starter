@@ -1,7 +1,6 @@
 # About
 
-This is a starter site for build static sites. It uses the Harp preprocessing to hanbdle EJS and CSS files (although 
-these can be any file formats that Harp supports) and Webpack for JS bundling.
+This is a starter package for building static HTML sites. It uses the Harp package to preprocess EJS and CSS files (although these can be changed to any file formats Harp supports) and Webpack for JS bundling.
 
 # Commands
 
