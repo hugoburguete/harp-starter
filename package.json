@@ -1,0 +1,31 @@
+{
+  "name": "harp-test",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.1.0",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
+  },
+  "scripts": {
+    "build": "npm run build:site && npm run build:js",
+    "build:js": "webpack --config webpack.prod.js",
+    "build:site": "harp compile ./src ./build",
+    "dev": "concurrently \"npm:serve\" \"npm:watch\" \"npm:watch:js\"",
+    "serve": "harp server ./src --port 9000",
+    "watch": "browser-sync start --proxy localhost:9000 --files src/*.ejs src/*.scss src/js/index.bundle.js",
+    "watch:js": "webpack --watch --config webpack.dev.js"
+  },
+  "author": "Hugo Burguete",
+  "license": "ISC"
+}
